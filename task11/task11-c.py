@@ -7,7 +7,7 @@ class Data:
 
 	def getDay(self):
 		days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
-		d = self.data.strip()
+		d = self.data
 		day = int(d[0:2])
 		month = int(d[3:5]) - 2
 		year = int(d[6:])
