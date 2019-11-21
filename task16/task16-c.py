@@ -1,36 +1,33 @@
 # 5
 
-q1 = int(input('Исходная система счисления: '))
+q1 = int(input('Исх. Сист. Счисления: '))
+q2 = int(input('Желаемая Сист. Счисления: '))
+num = input('Число системы q1: ')
 
-num = input('Число в этой системе: ')
+print('\nПеревод в q2:')
+print('-'*30)
 
-q2 = int(input('В какую перевести?: '))
-
-l = len(num)
-
+# Перевод в 10-ю
 tenNum = 0
 
 i = 0
 
-c = l - 1
+c = len(num) - 1
 
 while c > -1:
-
     tenNum += int(num[i]) * q1 ** c
-
     c -= 1
-
     i += 1
 
-returnNum = ''
+# Перевод в q2
 
-num = int(num)
+num = ''
 
-while num > 0:
-  dif = num % q2
-  num = num // q2
-  returnNum += str(dif)
+while tenNum > 0:
+	n = tenNum % q2
+	tenNum = tenNum // q2
+	num += str(n)
 
-returnNum = returnNum[::-1]
+num = num[::-1]
 
-print(returnNum)
+print('Ответ:',num)

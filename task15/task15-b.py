@@ -34,8 +34,8 @@ x1 = round(x0 + vx0 * t, 2)
 
 y1 = round(y0 + vy0 * t - (g*t**2) / 2, 2)
 
-for i in range(10):
-    t += 1
-    x1 = round(x0 + vx0 * t, 2)
-    y1 = round(y0 + vy0 * t - (g*t**2) / 2, 2)
-    print('{}.{}'.format(i+1, t),'\t\t', round(x1, 2), '\t\t', round(y1, 2))
+# 4
+
+h = vy0 * t - (g*t**2) // 2
+
+print('Макс. Высота:', h)

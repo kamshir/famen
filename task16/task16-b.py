@@ -1,16 +1,20 @@
 # 4
 
-x = int(input('Введите число в 10-й чистеме счисления: '))
+x = int(input('Введите число в 10-й системе счисления: '))
 
-q = int(input('Выберите нужную систему счисления: '))
+q = int(input('Введите систему, в которую хотите перевести: '))
 
-returnNum = ''
+num = ''
 
 while x > 0:
-  dif = x % q
-  x = x // q
-  returnNum += str(dif)
+	n = x%q
+	x = x // q
+	num += str(n)
 
-returnNum = returnNum[::-1]
+num = num[::-1]
 
-print(returnNum)
+l = len(num)
+
+print('-'*30)
+
+print('Готовое число:', fpart)

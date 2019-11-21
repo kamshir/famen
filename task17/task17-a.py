@@ -1,26 +1,30 @@
 # 3
 
-from math import sin, cos
+from math import cos, sin, pi
+
+a = float(input('Начало отрезка: '))
+b = float(input('Конец отрезка: '))
+
+eps = float(input('Точность расчётов: '))
 
 def f(x):
-  return sin(x) + cos(x)
+	return sin((pi * x) / 180) - 1 / x
 
-k = 0
-a = float(input('Начало: '))
-b = float(input('Конец: '))
-eps = float(input('Погрешность: '))
+def find(x0, x1, eps):
+	while True:
+		x = (x0 + x1) / 2
+		func = f(x)
 
-print('№\t\tНачало\t\tКонец')
+		if (func > 0):
+			x0 = x
+		else:
+			x1 = x
 
-while True:
-  k += 1
-  c = (a + b) // 2
-  if (f(a) * f(c) >= 0):
-    a = c
-  else:
-    b = c
-  
-  if (abs(b - a) > eps):
-    print('Корень:', c)
-    print('Кол-во делений: %s' % k)
-    break
+		if (abs(x1 - x0) > eps): 
+			break
+
+		return c
+
+c = find(a, b, eps)
+
+print('Корень уравнения:', c)
