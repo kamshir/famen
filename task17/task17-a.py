@@ -23,7 +23,7 @@ def find(x0, x1, eps):
 		if (abs(x1 - x0) > eps): 
 			break
 
-		return c
+		return x
 
 c = find(a, b, eps)
 
